@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background: rgb(9, 9, 114);
+}
+.piano {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piano {
+  display: flex;
+}
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+  font-size: 2rem;
+}
+.white {
+  background: white;
+  --width: 100px;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.white span {
+  position: absolute;
+  bottom: 0;
+}
+.black {
+  --width: 60px;
+  background: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  margin-top: -160px;
+  border-radius: 5px;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+.active.white {
+  background: #ccc;
+}
+.active.black {
+  background: #333;
+}
+@media (max-width: 500px) {
+  .piano {
+    transform: rotate(-90deg);
+    margin-left: 5vw;
+  }
+}
+@media (max-width: 460px) {
+  .piano {
+    width: 70vh;
+  }
+}
